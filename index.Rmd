@@ -20,5 +20,7 @@ hate_crimes
 
 ## Milestone 2
 
+My research question for the final project is: do areas with a higher level of economic inequality experience more hate crimes? Before examining the evidence, I hypothesize that areas with more economic inequality will have a higher level of hate crimes due to the tension between communities that is often exacerbated by poverty. Individuals living in areas where financial hardship is more common are presumably more likely to feel animosity toward other groups of people, as competition for scarce resources is more acute. 
+
 
 
