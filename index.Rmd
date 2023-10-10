@@ -7,9 +7,18 @@ output:
     self_contained: false
 ---
 
-
-
-## Project thoughts
+## Milestone 1
 
 I am interested in exploring data related to...
 criminal justice. Specifically, I hope to look at data from states with the death penalty and those without to see whether or not capital punishment lowers crime rates. I am interested in learning how to create an accurate data set for this project, given that controlled experiments are more difficult in the social sciences. 
+
+## Data Loading 
+
+```{r}
+hate_crimes
+```
+
+## Milestone 2
+
+
+
