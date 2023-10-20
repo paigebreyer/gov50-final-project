@@ -10,15 +10,26 @@ output:
 I am interested in exploring data related to...
 criminal justice. Specifically, I hope to look at data from states with the death penalty and those without to see whether or not capital punishment lowers crime rates. I am interested in learning how to create an accurate data set for this project, given that controlled experiments are more difficult in the social sciences. 
 
-## Data Loading 
+## Milestone 2
+My research question for the final project is: do areas with a higher level of economic inequality experience more hate crimes? Before examining the evidence, I hypothesize that areas with more economic inequality will have a higher level of hate crimes due to the tension between communities that is often exacerbated by poverty. Individuals living in areas where financial hardship is more common are presumably more likely to feel animosity toward other groups of people, as competition for scarce resources is more acute. In areas with a higher level of economic inequality, there will likely be a higher level of hate crimes. In areas with more economic equality, there will likely be fewer hate crimes. My data sample (found in a code chunk in my R Markdown file) groups the variables (which include the gini index, poverty rates by race, etc.) by state. The explanatory variable for my experiment is the gini coefficient, which measures economic inequality on a scale from 0 to 1. The outcome variable is the number of hate crimes per 100,000 people in a given area. The data that I am using was compiled by FiveThrityEight and collected by both the FBI and the Southern Poverty Law Center. A positive correlation coefficient for the relationship between the gini index and hate crimes per capita would prove my hypothesis, while a negative correlation coefficient would disprove my hypothesis. 
+
+## Milestone 3 
 ```{r}
 library(readr)
 hate_crimes <- read_csv("~/Downloads/hate-crimes/hate_crimes.csv")
 hate_crimes
 ```
 
-## Milestone 2
-My research question for the final project is: do areas with a higher level of economic inequality experience more hate crimes? Before examining the evidence, I hypothesize that areas with more economic inequality will have a higher level of hate crimes due to the tension between communities that is often exacerbated by poverty. Individuals living in areas where financial hardship is more common are presumably more likely to feel animosity toward other groups of people, as competition for scarce resources is more acute. In areas with a higher level of economic inequality, there will likely be a higher level of hate crimes. In areas with more economic equality, there will likely be fewer hate crimes. My data sample (found in a code chunk in my R Markdown file) groups the variables (which include the gini index, poverty rates by race, etc.) by state. The explanatory variable for my experiment is the gini coefficient, which measures economic inequality on a scale from 0 to 1. The outcome variable is the number of hate crimes per 100,000 people in a given area. The data that I am using was compiled by FiveThrityEight and collected by both the FBI and the Southern Poverty Law Center. A positive correlation coefficient for the relationship between the gini index and hate crimes per capita would prove my hypothesis, while a negative correlation coefficient would disprove my hypothesis. 
+```{r}
+library(ggplot2)
+hc_by_med_income <- hate_crimes |> 
+  ggplot(mapping = aes(x = gini_index, y = avg_hatecrimes_per_100k_fbi)) + 
+  geom_point(color = "olivedrab") +
+  geom_smooth(color = "chocolate4") + 
+  labs(x = "Gini Index", 
+       y = "Average Hate Crimes per Capita (FBI Data)")
+hc_by_med_income
+```
 
 
 ```
