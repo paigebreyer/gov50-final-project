@@ -22,13 +22,13 @@ hate_crimes
 
 ```{r}
 library(ggplot2)
-hc_by_med_income <- hate_crimes |> 
+hc_by_gini <- hate_crimes |> 
   ggplot(mapping = aes(x = gini_index, y = avg_hatecrimes_per_100k_fbi)) + 
   geom_point(color = "olivedrab") +
   geom_smooth(color = "chocolate4") + 
   labs(x = "Gini Index", 
        y = "Average Hate Crimes per Capita (FBI Data)")
-hc_by_med_income
+hc_by_gini
 ```
 
 
