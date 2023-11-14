@@ -16,7 +16,7 @@ My research question for the final project is: do areas with a higher level of e
 ## Milestone 3 
 ```{r}
 library(readr)
-hate_crimes <- read_csv("~/Downloads/hate-crimes/hate_crimes.csv")
+hate_crimes <- read_csv("~/Downloads/hate-crimes/hate_crimes.csv") 
 hate_crimes
 ```
 
