@@ -31,7 +31,15 @@ hc_by_gini <- hate_crimes |>
 hc_by_gini
 ```
 
+```{r}
+library(tidyverse)
+viz_2 <- hate_crimes |> 
+  drop_na() |> 
+  summarize(cor(avg_hatecrimes_per_100k_fbi, gini_index))
+knitr::kable(viz_2, col.names = c("Correlation Between Gini Index and Hate Crimes Per Capita"))
+```
 
+There is a positive correlation between economic inequality and hate crimes per capita in this dataset. 
 ```
 
 
