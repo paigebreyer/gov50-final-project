@@ -31,6 +31,7 @@ hc_by_gini <- hate_crimes |>
 hc_by_gini
 ```
 
+## Milestone 4
 ```{r}
 library(tidyverse)
 viz_2 <- hate_crimes |> 
