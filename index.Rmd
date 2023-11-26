@@ -31,16 +31,34 @@ hc_by_gini <- hate_crimes |>
 hc_by_gini
 ```
 
+```{r}
+library(ggplot2)
+hc_by_gini_2 <- hate_crimes |> 
+  ggplot(mapping = aes(x = gini_index, y = hate_crimes_per_100k_splc)) + 
+  geom_point(color = "forestgreen") +
+  geom_smooth(color = "lavender") + 
+  labs(x = "Gini Index", 
+       y = "Average Hate Crimes per Capita (SPLC Data)")
+hc_by_gini_2
+```
+
 ## Milestone 4
 ```{r}
 library(tidyverse)
-viz_2 <- hate_crimes |> 
+viz_3 <- hate_crimes |> 
   drop_na() |> 
   summarize(cor(avg_hatecrimes_per_100k_fbi, gini_index))
-knitr::kable(viz_2, col.names = c("Correlation Between Gini Index and Hate Crimes Per Capita"))
+knitr::kable(viz_3, col.names = c("Correlation Between Gini Index and Hate Crimes Per Capita"))
+```
+```{r}
+library(tidyverse)
+viz_4 <- hate_crimes |> 
+  drop_na() |> 
+  summarize(cor(hate_crimes_per_100k_splc, gini_index))
+knitr::kable(viz_4, col.names = c("Correlation Between Gini Index and Hate Crimes Per Capita"))
 ```
 
 There is a positive correlation between economic inequality and hate crimes per capita in this dataset. 
-```
 
+```
 
