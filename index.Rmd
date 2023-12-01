@@ -79,13 +79,13 @@ viz_5
 ```
 
 ```{r}
-viz_6 <- hate_crimes |> 
+viz_6. <- hate_crimes |> 
   ggplot(mapping = aes(x = avg_hatecrimes_per_100k_fbi, y = income_group)) + 
   geom_col() + 
   labs(title = "Hate Crimes per Capita by Income (FBI Data)", 
        x = "Hate Crimes per Capita (FBI Data)", 
        y = "Income Group")
-viz_6
+viz_6.
 ```
 
 
