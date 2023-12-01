@@ -60,5 +60,34 @@ knitr::kable(viz_4, col.names = c("Correlation Between Gini Index and Hate Crime
 
 There is a positive correlation between economic inequality and hate crimes per capita in this dataset. 
 
+```{r}
+hate_crimes <- hate_crimes |> 
+  mutate(income_group = case_when(
+    median_household_income < 50000 ~ "1. Under $50k", 
+    median_household_income > 50000 & median_household_income < 60000 ~ "2. $50k - $60k",
+    median_household_income > 60000 ~ "3. Over $60k")) 
+```
+
+```{r}
+viz_5 <- hate_crimes |> 
+  ggplot(mapping = aes(x = hate_crimes_per_100k_splc, y = income_group)) + 
+  geom_col() + 
+  labs(title = "Hate Crimes per Capita by Income (SPLC Data)", 
+       x = "Hate Crimes per Capita (SPLC Data)", 
+       y = "Income Group")
+viz_5
+```
+
+```{r}
+viz_6 <- hate_crimes |> 
+  ggplot(mapping = aes(x = avg_hatecrimes_per_100k_fbi, y = income_group)) + 
+  geom_col() + 
+  labs(title = "Hate Crimes per Capita by Income (FBI Data)", 
+       x = "Hate Crimes per Capita (FBI Data)", 
+       y = "Income Group")
+viz_6
+```
+
+
 ```
 
