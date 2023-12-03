@@ -58,7 +58,7 @@ viz_4 <- hate_crimes |>
 knitr::kable(viz_4, col.names = c("Correlation Between Gini Index and Hate Crimes Per Capita"))
 ```
 
-There is a positive correlation between economic inequality and hate crimes per capita in this dataset. 
+The first four visuals (displayed above) display a positive correlation between economic inequality and hate crimes per capita in this data set. The correlation is positive for both the SPLC estimates of hate crimes per capita and the FBI estimates of hate crimes per capita. 
 
 ```{r}
 hate_crimes <- hate_crimes |> 
@@ -79,15 +79,35 @@ viz_5
 ```
 
 ```{r}
-viz_6. <- hate_crimes |> 
+viz_6 <- hate_crimes |> 
   ggplot(mapping = aes(x = avg_hatecrimes_per_100k_fbi, y = income_group)) + 
   geom_col() + 
   labs(title = "Hate Crimes per Capita by Income (FBI Data)", 
        x = "Hate Crimes per Capita (FBI Data)", 
        y = "Income Group")
-viz_6.
+viz_6
 ```
 
+As is demonstrated in the bar graph labeled "Hate Crimes per Capita by Income (SPLC Data)," the most hate crimes per capita occur in counties where the median household income is $50k-$60k. In the graph labeled "Hate Crimes per Capita by Income (FBI Data)," However, the most hate crimes are estimated to occur in counties with a median household income above $60k. 
+
+```{r}
+viz_7 <- hate_crimes |> 
+  ggplot(mapping = aes(x = median_household_income, y = gini_index)) + 
+  geom_point() + 
+  labs(x = "Median Household Income", 
+       y = "Gini Index", 
+       title = "Income Inequality by Median Income")
+viz_7
+```
+
+```{r}
+viz_8 <- hate_crimes |>
+  drop_na() |> 
+  summarize(cor(median_household_income, gini_index))
+knitr::kable(viz_8, col.names = c("Correlation Between Gini Index and Median Household Income"))
+```
+
+The two visuals above demonstrate that the relationship between median household income and income inequality is negative (that is, counties with a lower median income tend to have more economic inequality on average). 
 
 ```
 
