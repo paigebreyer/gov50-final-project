@@ -20,9 +20,8 @@ hate_crimes <- read_csv("~/Downloads/hate-crimes/hate_crimes.csv")
 hate_crimes
 ```
 ## Milestone 4: Visualizations 
-
-```{r}
 # Correlation Between Income Inequality and Hate Crimes (FBI Data)
+```{r}
 library(ggplot2)
 hc_by_gini <- hate_crimes |> 
   ggplot(mapping = aes(x = gini_index, y = avg_hatecrimes_per_100k_fbi)) + 
@@ -33,8 +32,8 @@ hc_by_gini <- hate_crimes |>
 hc_by_gini
 ```
 
-```{r}
 # Correlation Between Income Inequality and Hate Crimes (SPLC Data)
+```{r}
 library(ggplot2)
 hc_by_gini_2 <- hate_crimes |> 
   ggplot(mapping = aes(x = gini_index, y = hate_crimes_per_100k_splc)) + 
@@ -45,16 +44,17 @@ hc_by_gini_2 <- hate_crimes |>
 hc_by_gini_2
 ```
 
-```{r}
+
 # Correlation Coefficient (FBI Data)
+```{r}
 library(tidyverse)
 viz_3 <- hate_crimes |> 
   drop_na() |> 
   summarize(cor(avg_hatecrimes_per_100k_fbi, gini_index))
 knitr::kable(viz_3, col.names = c("Correlation Between Gini Index and Hate Crimes Per Capita"))
 ```
-```{r}
 # Correlation Coefficient (SPLC Data)
+```{r}
 library(tidyverse)
 viz_4 <- hate_crimes |> 
   drop_na() |> 
@@ -62,18 +62,19 @@ viz_4 <- hate_crimes |>
 knitr::kable(viz_4, col.names = c("Correlation Between Gini Index and Hate Crimes Per Capita"))
 ```
 
+## Analysis of visualizations 1:4 
 The first four visuals (displayed above) display a positive correlation between economic inequality and hate crimes per capita in this data set. The correlation is positive for both the SPLC estimates of hate crimes per capita and the FBI estimates of hate crimes per capita. 
 
-```{r}
 # Income Groups (over and under $75k, the approx. median household income in the US)
+```{r}
 hate_crimes <- hate_crimes |> 
   mutate(income_group = case_when(
     median_household_income < 75000 ~ "1. Under $75k", 
     median_household_income > 75000 ~ "2. Over $75k")) 
 ```
 
-```{r}
 # Hate Crimes per Capita by Income Group (SPLC Data) 
+```{r}
 viz_5 <- hate_crimes |> 
   ggplot(mapping = aes(x = hate_crimes_per_100k_splc, y = income_group)) + 
   geom_col() + 
@@ -83,8 +84,8 @@ viz_5 <- hate_crimes |>
 viz_5
 ```
 
-```{r}
 # Hate Crimes per Capita by Income Group (FBI Data)
+```{r}
 viz_6 <- hate_crimes |> 
   ggplot(mapping = aes(x = avg_hatecrimes_per_100k_fbi, y = income_group)) + 
   geom_col() + 
@@ -93,8 +94,8 @@ viz_6 <- hate_crimes |>
        y = "Income Group")
 viz_6
 ```
-
-As is demonstrated in the bar graph labeled "Hate Crimes per Capita by Income (SPLC Data)," the most hate crimes per capita occur in counties where the median household income is $50k-$60k. In the graph labeled "Hate Crimes per Capita by Income (FBI Data)," However, the most hate crimes are estimated to occur in counties with a median household income above $60k. 
+## Analysis of visualizations 5 & 6 
+As is demonstrated in both the bar graph labeled "Hate Crimes per Capita by Income (SPLC Data)," and the bar graph labeled "Hate Crimes per Capita by Income (FBI Data)," the vast majority of hate crimes occur in counties where the median household income is below the national average. 
 
 ```
 
