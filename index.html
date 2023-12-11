@@ -1451,8 +1451,8 @@
 
 <div class="d-article">
 <h2 id="introduction">Introduction</h2>
-<p>My research question for the final project is: do areas with a higher level of economic inequality experience more hate crimes? Before examining the evidence, I hypothesized that areas with more economic inequality will have a higher level of hate crimes due to the tension between communities that is often exacerbated by poverty. In areas with more economic equality, there will likely be fewer hate crimes. My data sample (found in a code chunk in my R Markdown file) groups the variables (which include the gini index, poverty rates by race, etc.) by state. The explanatory variable for my experiment is the gini coefficient, which measures economic inequality on a scale from 0 to 1. The outcome variable is the number of hate crimes per 100,000 people in a given area. A positive correlation coefficient for the relationship between the gini index and hate crimes per capita would prove my hypothesis, while a negative correlation coefficient would disprove my hypothesis.</p>
-<p>This study is interesting because it is likely that individuals living in areas where financial hardship is more common are more likely to feel animosity toward other groups of people, as competition for scarce resources is more acute. In areas with a higher level of economic inequality, there will likely be a higher level of hate crimes due to such animosity. It will be interesting to see the degree to which income inequality influences hate crimes per capita to better understand why people might hold/act on discriminatory beliefs.</p>
+<p>My research question for the final project is: do areas with a higher level of economic inequality experience more hate crimes? Before examining the evidence, I hypothesized that areas with more economic inequality will have a higher level of hate crimes due to the tension between communities that is often exacerbated by economic inequality. In areas with more economic equality, there will likely be fewer hate crimes. My data sample (found in a code chunk in my R Markdown file) groups the variables (which include the gini index and hate crime rates) by state. The explanatory variable for my experiment is the gini coefficient, which measures economic inequality on a scale from 0 to 1. The outcome variable is the number of hate crimes per 100,000 people in a given area. A positive correlation coefficient for the relationship between the gini index and hate crimes per capita would prove my hypothesis, while a negative correlation coefficient would disprove my hypothesis (not accounting for possible confounders, a topic addressed later in the project).</p>
+<p>This study is interesting because it is likely that individuals living in areas where economic inequality is more common are more likely to feel animosity toward other groups of people, as competition for scarce resources is more acute. In areas with a higher level of economic inequality, there will likely be a higher level of hate crimes due to such animosity. It will be interesting to see the degree to which income inequality influences hate crimes per capita to better understand why people might hold/act on discriminatory beliefs.</p>
 <h2 id="section"></h2>
 <h2 id="data">Data</h2>
 <h1 id="data-loading-and-cleaning">Data Loading and Cleaning</h1>
@@ -2151,7 +2151,7 @@
 <p><img src="index_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
 <h2 id="section-1"></h2>
-<p>The data that I am using was compiled by FiveThirtyEight and collected by both the FBI and the Southern Poverty Law Center. The FBI data was collected from law enforcement agencies across the nation on a voluntary basis (that is, the individual law enforcement agencies elected to share their hate crime data with the FBI). The SPLC data contains both media accounts of hate crimes/incidents and self-reported demonstrations of hate which are not subject to persecution. The rest of the data in the dataset that was useful for this project comes from the Census.</p>
+<p>The cross-sectional data that I am using was compiled by FiveThirtyEight and collected by both the FBI and the Southern Poverty Law Center. The FBI data was collected from law enforcement agencies across the nation on a voluntary basis (that is, the individual law enforcement agencies elected to share their hate crime data with the FBI). The SPLC data contains both media accounts of hate crimes/incidents and self-reported demonstrations of hate which are not subject to persecution. The rest of the data in the dataset that was useful for this project comes from the Census.</p>
 <p>The above plots display the number of per capita hate crimes by state. Both the FBI and SPLC measurements also include measurements of hate crimes in the District of Columbia, the area that has the highest per-capita instance of hate crimes/incidents. Some data in the data set is missing (both SPLC and FBI measurements for Hawaii, and SPLC data for North Dakota, South Dakota and Wyoming). The data from Hawaii is likely missing from the FBI measurements because it is submitted voluntarily, indicating that law enforcement agencies in that state chose not to share their hate crime data. Measurements from the SPLC are likely missing from some states because of issues with data collection. The data from the SPLC is potentially more biased due to its inclusion of self-reported hate incidents.</p>
 <h2 id="results">Results</h2>
 <h1 id="correlation-between-income-inequality-and-hate-crimes-fbi-data">Correlation Between Income Inequality and Hate Crimes (FBI Data)</h1>
@@ -2252,16 +2252,16 @@ Coefficients:
 <pre><code># A tibble: 1,000 × 2
    replicate hc_mean
        &lt;int&gt;   &lt;dbl&gt;
- 1         1   0.291
- 2         2   0.314
- 3         3   0.297
- 4         4   0.340
- 5         5   0.261
- 6         6   0.314
- 7         7   0.285
- 8         8   0.315
- 9         9   0.333
-10        10   0.303
+ 1         1   0.312
+ 2         2   0.268
+ 3         3   0.283
+ 4         4   0.315
+ 5         5   0.299
+ 6         6   0.308
+ 7         7   0.291
+ 8         8   0.279
+ 9         9   0.296
+10        10   0.251
 # ℹ 990 more rows</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
@@ -2272,7 +2272,7 @@ Coefficients:
 <pre><code># A tibble: 1 × 2
   lower_ci upper_ci
      &lt;dbl&gt;    &lt;dbl&gt;
-1    0.243    0.383</code></pre>
+1    0.247    0.382</code></pre>
 </div>
 <h1 id="regression-and-ci-for-fbi-data">Regression and CI for FBI Data</h1>
 <div class="layout-chunk" data-layout="l-body">
@@ -2299,16 +2299,16 @@ Coefficients:
 <pre><code># A tibble: 1,000 × 2
    replicate hc_mean
        &lt;int&gt;   &lt;dbl&gt;
- 1         1   0.291
- 2         2   0.314
- 3         3   0.297
- 4         4   0.340
- 5         5   0.261
- 6         6   0.314
- 7         7   0.285
- 8         8   0.315
- 9         9   0.333
-10        10   0.303
+ 1         1   0.312
+ 2         2   0.268
+ 3         3   0.283
+ 4         4   0.315
+ 5         5   0.299
+ 6         6   0.308
+ 7         7   0.291
+ 8         8   0.279
+ 9         9   0.296
+10        10   0.251
 # ℹ 990 more rows</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
@@ -2319,13 +2319,13 @@ Coefficients:
 <pre><code># A tibble: 1 × 2
   lower_ci upper_ci
      &lt;dbl&gt;    &lt;dbl&gt;
-1     1.97     2.88</code></pre>
+1     1.95     2.88</code></pre>
 </div>
-<p>As displayed in all six of the visualizations above, there is a positive correlation between income inequality (measured using the gini index) and hate crimes per capita in both the FBI and SPLC measurements. This means that there is a higher instance of hate crimes in states with greater income inequality (as measured by the gini index). This positive correlation is likely due to the fact that in places with greater income inequality, people are more likely to have to compete for scarce resources, which can excerbate already existing divisions between various groups. The correlation between income inequality and per-capita hate crimes is slightly more positive when examining the FBI data. The stronger positive correlation between hate crimes and income inequality is likely due top the fact that the FBI data includes measurements from states like North Dakota and South Dakota, both of which have hate crime rates that are above the average of 2.37 hate crimes per capita.</p>
+<p>As displayed in all six of the visualizations above, there is a positive correlation between income inequality (measured using the gini index) and hate crimes per capita in both the FBI and SPLC measurements. This means that there is a higher instance of hate crimes in states with greater income inequality (as measured by the gini index). This positive correlation is likely due to the fact that in places with greater income inequality, people are more likely to have to compete for scarce resources, which can excerbate already existing divisions between various groups. The correlation between income inequality and per-capita hate crimes is slightly more positive when examining the FBI data. The stronger positive correlation between hate crimes and income inequality is likely due to the fact that the FBI data includes measurements from states like North Dakota and South Dakota, both of which have hate crime rates that are above the average of 2.37 hate crimes per capita.</p>
 <p>The coefficient in the linear regression for the SPLC data displays that for a 1 unit increase in the gini index, hate crimes per capita would increase by a measure of 4.021. The intercept of this regression shows that if the gini index was zero (representing perfect equality), the average number of hate crimes per capita would be -1.527. Of course, you can not have a negative number of hate crimes. The negativity of this number is due to the fact that there are no states in the dataset with perfect equality. The coefficient in the linear regression for the FBI data displays that for a 1 unit increase in the gini index, hate crimes per capita would increase by a measure of 34.57. The intercept of this regression shows that if the gini index was zero (representing perfect equality), the average number of hate crimes per capita would be -13.33. The analysis of negative intercepts outlined above is true for this regression model as well.</p>
-<p>In both the SPLC and FBI data, we reject the null hypothesis. The above models demonstrate statistical signifigance, indicating that we should interpret the results of the experiment causally.</p>
+<p>In both the SPLC and FBI data, we reject the null hypothesis. The above models demonstrate statistical significance, indicating that the observed relationship is not due to chance. However, confounding variables may have an influence on apparent causality. Though there is likely a causal relationship present, caution in interpretation is necessary to ensure accuracy. The concept of confounders is discussed in more detail in the conclusion.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>The results of this experiment, which show that states with greater inequality of income experience more hate crimes, supports my hypothesis. The largest limitation in this analysis is potential confounders. It is possible that other factors influence the amount of hate crimes in an area, including the political makeup of the state. This is a confounders because it has the potential to impact both the dependent (hate crimes per capita) and independent (gini index) variables in this study. If I had more time and/or money, I could adjust for the possible confounders outlined above using a variety of statistical models, namely a multiple regression analysis. Such would allow for the inclusion of multiple independent variables (some being potential confounders). Analysis of the coefficients provided by the multiple regression model would aid me in adjusting my analysis for each confounder’s impact on hate crimes per capita.</p>
+<p>The results of this experiment, which show that states with greater inequality of income experience more hate crimes, supports my hypothesis. The largest limitation in this analysis is potential confounders. It is possible that other factors influence the amount of hate crimes in an area, including the political makeup of the state. This is a confounder because it has the potential to impact both the dependent (hate crimes per capita) and independent (gini index) variables in this study. If I had more time and/or money, I could adjust for the possible confounders outlined above using a variety of statistical models, namely a multiple regression analysis. Such would allow for the inclusion of multiple independent variables (some being potential confounders). Analysis of the coefficients provided by the multiple regression model would aid me in adjusting my analysis for each confounder’s impact on hate crimes per capita.</p>
 <pre><code>
 ```{.r .distill-force-highlighting-css}</code></pre>
 <!--radix_placeholder_article_footer-->
