@@ -2130,7 +2130,8 @@
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> </span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Hate Crimes per Capita (SPLC Data)"</span>, </span>
 <span>       y <span class='op'>=</span> <span class='st'>"State"</span>, </span>
-<span>       title <span class='op'>=</span> <span class='st'>"Hate Crimes per Capita by State (SPLC Data)"</span><span class='op'>)</span></span>
+<span>       title <span class='op'>=</span> <span class='st'>"Hate Crimes per Capita by State (SPLC Data)"</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>axis.text.y <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span><span class='op'>)</span></span>
 <span><span class='va'>dep_var_plot_splc</span></span></code></pre>
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
@@ -2143,7 +2144,8 @@
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> </span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Hate Crimes per Capita (FBI Data)"</span>, </span>
 <span>       y <span class='op'>=</span> <span class='st'>"State"</span>, </span>
-<span>       title <span class='op'>=</span> <span class='st'>"Hate Crimes per Capita by State (FBI Data)"</span><span class='op'>)</span></span>
+<span>       title <span class='op'>=</span> <span class='st'>"Hate Crimes per Capita by State (FBI Data)"</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>axis.text.y <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span><span class='op'>)</span></span>
 <span><span class='va'>dep_var_plot_fbi</span></span></code></pre>
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
@@ -2256,11 +2258,7 @@ Coefficients:
 <p>The coefficient in the linear regression for the SPLC data displays that for a 1 unit increase in the gini index, hate crimes per capita would increase by a measure of 4.021. The intercept of this regression shows that if the gini index was zero (representing perfect equality), the average number of hate crimes per capita would be -1.527. Of course, you can not have a negative number of hate crimes. The negativity of this number is due to the fact that there are no states in the dataset with perfect equality. The coefficient in the linear regression for the FBI data displays that for a 1 unit increase in the gini index, hate crimes per capita would increase by a measure of 34.57. The intercept of this regression shows that if the gini index was zero (representing perfect equality), the average number of hate crimes per capita would be -13.33. The analysis of negative intercepts outlined above is true for this regression model as well.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>The results of this experiment, which show that states with greater inequality of income experience more hate crimes, supports my hypothesis. The largest limitation in this analysis is potential confounders. It is possible that other factors (potentially factors related to income inequality) influence the amount of hate crimes in an area, including the political makeup of the state or the diversity of a given area. If I had more time and/or money, I could adjust for the possible confounders outlined above using a variety of statistical models.</p>
-<p>Questions for OH:
-- End of conclusion
-- Spacing out the y-axis on my bar graphs
-- Plots not showing up on website
-- Check to make sure use of data is okay</p>
+<p>(BE CLEAR justify using template justification PDF from James)</p>
 <pre><code>
 ```{.r .distill-force-highlighting-css}</code></pre>
 <!--radix_placeholder_article_footer-->

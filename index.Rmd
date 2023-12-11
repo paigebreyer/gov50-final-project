@@ -39,7 +39,8 @@ dep_var_plot_splc <- hate_crimes |>
   geom_col() + 
   labs(x = "Hate Crimes per Capita (SPLC Data)", 
        y = "State", 
-       title = "Hate Crimes per Capita by State (SPLC Data)")
+       title = "Hate Crimes per Capita by State (SPLC Data)") + 
+  theme(axis.text.y = element_text(size = 5))
 dep_var_plot_splc
 ```
 
@@ -50,7 +51,8 @@ dep_var_plot_fbi <- hate_crimes |>
   geom_col() + 
   labs(x = "Hate Crimes per Capita (FBI Data)", 
        y = "State", 
-       title = "Hate Crimes per Capita by State (FBI Data)")
+       title = "Hate Crimes per Capita by State (FBI Data)") + 
+  theme(axis.text.y = element_text(size = 5))
 dep_var_plot_fbi
 ```
 ##
@@ -120,14 +122,8 @@ hc_reg_fbi
 
 ## Conclusion 
 The results of this experiment, which show that states with greater inequality of income experience more hate crimes, supports my hypothesis. The largest limitation in this analysis is potential confounders. It is possible that other factors (potentially factors related to income inequality) influence the amount of hate crimes in an area, including the political makeup of the state or the diversity of a given area. If I had more time and/or money, I could adjust for the possible confounders outlined above using a variety of statistical models. 
- 
 
 
-Questions for OH: 
-- End of conclusion 
-- Spacing out the y-axis on my bar graphs
-- Plots not showing up on website 
-- Check to make sure use of data is okay
-
+(BE CLEAR justify using template justification PDF from James) 
 ```
 
