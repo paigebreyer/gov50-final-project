@@ -2228,11 +2228,12 @@
 </tbody>
 </table>
 </div>
-<h1 id="regression-and-ci-for-splc-data">Regression and CI for SPLC Data</h1>
+<h1 id="regression-for-splc-data">Regression for SPLC Data</h1>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>hc_reg_splc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>hate_crimes_per_100k_splc</span> <span class='op'>~</span> <span class='va'>gini_index</span> , data <span class='op'>=</span> <span class='va'>hate_crimes</span><span class='op'>)</span></span>
-<span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/modelsummary/man/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>hc_reg_splc</span>, digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>hc_reg_splc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>hate_crimes_per_100k_splc</span> <span class='op'>~</span> <span class='va'>gini_index</span> <span class='op'>+</span> <span class='va'>median_household_income</span>, data <span class='op'>=</span> <span class='va'>hate_crimes</span><span class='op'>)</span></span>
+<span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/modelsummary/man/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>hc_reg_splc</span>,</span>
+<span>                           statistic <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"p = {p.value}"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
 </div>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -2250,14 +2251,14 @@
 (Intercept)
 </td>
 <td style="text-align:center;">
-−1.527
+−2.454
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 </td>
 <td style="text-align:center;">
-(0.783)
+p = 0.003
 </td>
 </tr>
 <tr>
@@ -2265,14 +2266,29 @@
 gini_index
 </td>
 <td style="text-align:center;">
-4.021
+4.722
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.005
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+median_household_income
+</td>
+<td style="text-align:center;">
+0.000
 </td>
 </tr>
 <tr>
 <td style="text-align:left;box-shadow: 0px 1.5px">
 </td>
 <td style="text-align:center;box-shadow: 0px 1.5px">
-(1.718)
+p = 0.003
 </td>
 </tr>
 <tr>
@@ -2288,7 +2304,7 @@ Num.Obs.
 R2
 </td>
 <td style="text-align:center;">
-0.109
+0.270
 </td>
 </tr>
 <tr>
@@ -2296,7 +2312,7 @@ R2
 R2 Adj.
 </td>
 <td style="text-align:center;">
-0.089
+0.236
 </td>
 </tr>
 <tr>
@@ -2304,7 +2320,7 @@ R2 Adj.
 AIC
 </td>
 <td style="text-align:center;">
-3.7
+−3.7
 </td>
 </tr>
 <tr>
@@ -2312,7 +2328,7 @@ AIC
 BIC
 </td>
 <td style="text-align:center;">
-9.2
+3.7
 </td>
 </tr>
 <tr>
@@ -2320,7 +2336,7 @@ BIC
 Log.Lik.
 </td>
 <td style="text-align:center;">
-1.164
+5.850
 </td>
 </tr>
 <tr>
@@ -2328,70 +2344,18 @@ Log.Lik.
 RMSE
 </td>
 <td style="text-align:center;">
-0.24
+0.21
 </td>
 </tr>
 </tbody>
 </table>
 </div>
+<h1 id="regression-for-fbi-data">Regression for FBI Data</h1>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/tidymodels/infer'>infer</a></span><span class='op'>)</span></span>
-<span><span class='va'>boot_dist_splc</span> <span class='op'>&lt;-</span> <span class='va'>hate_crimes</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/rep_sample_n.html'>rep_slice_sample</a></span><span class='op'>(</span>prop <span class='op'>=</span> <span class='fl'>1</span>, reps <span class='op'>=</span> <span class='fl'>1000</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>replicate</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>hc_mean <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>hate_crimes_per_100k_splc</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span></span>
-<span><span class='va'>boot_dist_splc</span></span></code></pre>
-</div>
-<pre><code># A tibble: 1,000 × 2
-   replicate hc_mean
-       &lt;int&gt;   &lt;dbl&gt;
- 1         1   0.341
- 2         2   0.308
- 3         3   0.310
- 4         4   0.289
- 5         5   0.283
- 6         6   0.323
- 7         7   0.328
- 8         8   0.265
- 9         9   0.297
-10        10   0.272
-# ℹ 990 more rows</code></pre>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>CI_splc</span> <span class='op'>&lt;-</span> <span class='va'>boot_dist_splc</span> <span class='op'>|&gt;</span> </span>
-<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/get_confidence_interval.html'>get_confidence_interval</a></span><span class='op'>(</span>level <span class='op'>=</span> <span class='fl'>0.95</span>, type <span class='op'>=</span> <span class='st'>"percentile"</span><span class='op'>)</span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>CI_splc</span><span class='op'>)</span></span></code></pre>
-</div>
-<table>
-<thead>
-<tr>
-<th style="text-align:right;">
-lower_ci
-</th>
-<th style="text-align:right;">
-upper_ci
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-0.2413344
-</td>
-<td style="text-align:right;">
-0.3741528
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="regression-and-ci-for-fbi-data">Regression and CI for FBI Data</h1>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>hc_reg_fbi</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>avg_hatecrimes_per_100k_fbi</span> <span class='op'>~</span> <span class='va'>gini_index</span> , data <span class='op'>=</span> <span class='va'>hate_crimes</span><span class='op'>)</span></span>
-<span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/modelsummary/man/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>hc_reg_fbi</span>, digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>hc_reg_fbi</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>avg_hatecrimes_per_100k_fbi</span> <span class='op'>~</span> <span class='va'>gini_index</span> <span class='op'>+</span> <span class='va'>median_household_income</span>, data <span class='op'>=</span> <span class='va'>hate_crimes</span><span class='op'>)</span></span>
+<span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/modelsummary/man/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>hc_reg_fbi</span>,</span>
+<span>                           statistic <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"p = {p.value}"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
 </div>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -2409,14 +2373,14 @@ upper_ci
 (Intercept)
 </td>
 <td style="text-align:center;">
-−13.334
+−19.585
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 </td>
 <td style="text-align:center;">
-(4.884)
+p = &lt;0.001
 </td>
 </tr>
 <tr>
@@ -2424,14 +2388,29 @@ upper_ci
 gini_index
 </td>
 <td style="text-align:center;">
-34.571
+39.365
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+median_household_income
+</td>
+<td style="text-align:center;">
+0.000
 </td>
 </tr>
 <tr>
 <td style="text-align:left;box-shadow: 0px 1.5px">
 </td>
 <td style="text-align:center;box-shadow: 0px 1.5px">
-(10.743)
+p = 0.002
 </td>
 </tr>
 <tr>
@@ -2447,7 +2426,7 @@ Num.Obs.
 R2
 </td>
 <td style="text-align:center;">
-0.177
+0.326
 </td>
 </tr>
 <tr>
@@ -2455,7 +2434,7 @@ R2
 R2 Adj.
 </td>
 <td style="text-align:center;">
-0.160
+0.298
 </td>
 </tr>
 <tr>
@@ -2463,7 +2442,7 @@ R2 Adj.
 AIC
 </td>
 <td style="text-align:center;">
-191.0
+183.0
 </td>
 </tr>
 <tr>
@@ -2471,7 +2450,7 @@ AIC
 BIC
 </td>
 <td style="text-align:center;">
-196.7
+190.7
 </td>
 </tr>
 <tr>
@@ -2479,7 +2458,7 @@ BIC
 Log.Lik.
 </td>
 <td style="text-align:center;">
-−92.506
+−87.519
 </td>
 </tr>
 <tr>
@@ -2487,69 +2466,17 @@ Log.Lik.
 RMSE
 </td>
 <td style="text-align:center;">
-1.54
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>boot_dist_fbi</span> <span class='op'>&lt;-</span> <span class='va'>hate_crimes</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/rep_sample_n.html'>rep_slice_sample</a></span><span class='op'>(</span>prop <span class='op'>=</span> <span class='fl'>1</span>, reps <span class='op'>=</span> <span class='fl'>1000</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>replicate</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>hc_mean <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>avg_hatecrimes_per_100k_fbi</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span></span>
-<span><span class='va'>boot_dist_fbi</span></span></code></pre>
-</div>
-<pre><code># A tibble: 1,000 × 2
-   replicate hc_mean
-       &lt;int&gt;   &lt;dbl&gt;
- 1         1    2.38
- 2         2    2.04
- 3         3    2.42
- 4         4    2.36
- 5         5    2.25
- 6         6    2.25
- 7         7    2.59
- 8         8    2.55
- 9         9    2.12
-10        10    2.14
-# ℹ 990 more rows</code></pre>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>CI_fbi</span> <span class='op'>&lt;-</span> <span class='va'>boot_dist_fbi</span> <span class='op'>|&gt;</span> </span>
-<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/get_confidence_interval.html'>get_confidence_interval</a></span><span class='op'>(</span>level <span class='op'>=</span> <span class='fl'>0.95</span>, type <span class='op'>=</span> <span class='st'>"percentile"</span><span class='op'>)</span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>CI_fbi</span><span class='op'>)</span></span></code></pre>
-</div>
-<table>
-<thead>
-<tr>
-<th style="text-align:right;">
-lower_ci
-</th>
-<th style="text-align:right;">
-upper_ci
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-1.901519
-</td>
-<td style="text-align:right;">
-2.900035
+1.39
 </td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>As displayed in the visualizations above, there is a positive correlation between income inequality (measured using the gini index) and hate crimes per capita in both the FBI and SPLC measurements. This means that there is a higher instance of hate crimes in states with greater income inequality (as measured by the gini index). This positive correlation is likely due to the fact that in places with greater income inequality, people are more likely to have to compete for scarce resources, which can exacerbate already existing divisions between various groups. The correlation between income inequality and per-capita hate crimes is slightly more positive when examining the FBI data. The stronger positive correlation between hate crimes and income inequality is likely due to the fact that the FBI data includes measurements from states like North Dakota and South Dakota, both of which have hate crime rates that are above the average of 2.37 hate crimes per capita.</p>
-<p>The coefficient in the linear regression for the SPLC data displays that for a 1 unit increase in the gini index, hate crimes per capita would increase by a measure of 4.021. The intercept of this regression shows that if the gini index was zero (representing perfect equality), the average number of hate crimes per capita would be -1.527. Of course, you can not have a negative number of hate crimes. The negativity of this number is due to the fact that there are no states in the dataset with perfect equality. The coefficient in the linear regression for the FBI data displays that for a 1 unit increase in the gini index, hate crimes per capita would increase by a measure of 34.57. The intercept of this regression shows that if the gini index was zero (representing perfect equality), the average number of hate crimes per capita would be -13.33. The analysis of negative intercepts outlined above is true for this regression model as well.</p>
-<p>In both the SPLC and FBI data, we reject the null hypothesis. The above models demonstrate statistical significance, indicating that the observed relationship is not due to chance. However, confounding variables may have an influence on apparent causality. Though there is likely a causal relationship present, caution in interpretation is necessary to ensure accuracy. The concept of confounders is discussed in more detail in the conclusion.</p>
+<p>The coefficient in the linear regression for the SPLC data displays that for a 1 unit increase in the gini index, hate crimes per capita would increase by a measure of 4.722. The intercept of this regression shows that if the gini index was zero (representing perfect equality), the average number of hate crimes per capita would be −2.454. Of course, you can not have a negative number of hate crimes. The negativity of this number is due to the fact that there are no states in the dataset with perfect equality. The coefficient in the linear regression for the FBI data displays that for a 1 unit increase in the gini index, hate crimes per capita would increase by a measure of 39.365. The intercept of this regression shows that if the gini index was zero (representing perfect equality), the average number of hate crimes per capita would be −19.585. The analysis of negative intercepts outlined above is true for this regression model as well.</p>
+<p>In both the FBI data and the SPLC data, the p_value is below the level of <span class="math inline">\(\alpha=0.05\)</span> (p = 0.005 for the SPLC data, while p = &lt;0.001 for the FBI data). Thus, the models demonstrate statistical significance, indicating that the observed relationships are not due to chance. However, other confounding variables (besides median household income) may have an influence on apparent causality. Though there is likely a causal relationship present, caution in interpretation is necessary to ensure accuracy. The concept of additional confounders is discussed in more detail in the conclusion.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>The results of this experiment, which show that states with greater inequality of income experience more hate crimes, supports my hypothesis. The largest limitation in this analysis is potential confounders. It is possible that other factors influence the amount of hate crimes in an area, including the political makeup of the state. This is a confounder because it has the potential to impact both the dependent (hate crimes per capita) and independent (gini index) variables in this study. If I had more time and/or money, I could adjust for the possible confounders outlined above using a variety of statistical models, namely a multiple regression analysis. Such would allow for the inclusion of multiple independent variables (some being potential confounders). Analysis of the coefficients provided by the multiple regression model would aid me in adjusting my analysis for each confounder’s impact on hate crimes per capita.</p>
+<p>The results of this experiment, which show that states with greater inequality of income experience more hate crimes, supports my hypothesis. The largest limitation in this analysis is potential additional confounders. It is possible that other factors (besides median income and income inequality) influence the amount of hate crimes in an area, including the political makeup of the state. This is a confounder because it has the potential to impact both the dependent (hate crimes per capita) and independent (gini index) variables in this study. If I had more time and/or money, I could run another multiple regression analysis. Such would allow for the inclusion of another independent variable (being a potential confounders). Analysis of the coefficients provided by the additional multiple regression model would aid me in adjusting my analysis for another confounder’s impact on hate crimes per capita.</p>
 <pre><code>
 ```{.r .distill-force-highlighting-css}</code></pre>
 <!--radix_placeholder_article_footer-->
@@ -2559,6 +2486,15 @@ upper_ci
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
