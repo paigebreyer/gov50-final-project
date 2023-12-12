@@ -48,7 +48,7 @@
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-2-1.png","index_files/figure-html5/unnamed-chunk-3-1.png","index_files/figure-html5/unnamed-chunk-4-1.png","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/figure-html5/unnamed-chunk-6-1.png","index_files/figure-html5/unnamed-chunk-7-1.png","index_files/figure-html5/unnamed-chunk-8-1.png","index_files/figure-html5/unnamed-chunk-9-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.24/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/Untitled","index_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-2-1.png","index_files/figure-html5/unnamed-chunk-3-1.png","index_files/figure-html5/unnamed-chunk-4-1.png","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/figure-html5/unnamed-chunk-6-1.png","index_files/figure-html5/unnamed-chunk-7-1.png","index_files/figure-html5/unnamed-chunk-8-1.png","index_files/figure-html5/unnamed-chunk-9-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.24/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/kePrint-0.0.1/kePrint.js","index_files/lightable-0.0.1/lightable.css","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/Untitled","index_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1406,6 +1406,8 @@
 
   <!--/radix_placeholder_distill-->
   <script src="index_files/header-attrs-2.24/header-attrs.js"></script>
+  <script src="index_files/kePrint-0.0.1/kePrint.js"></script>
+  <link href="index_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="index_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="index_files/popper-2.6.0/popper.min.js"></script>
   <link href="index_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1463,7 +1465,7 @@
 <span><span class='va'>hate_crimes</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"~/Downloads/hate-crimes/hate_crimes.csv"</span><span class='op'>)</span> </span>
 <span><span class='va'>hate_crimes</span> <span class='op'>&lt;-</span> <span class='va'>hate_crimes</span> <span class='op'>|&gt;</span> </span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>state</span>, <span class='va'>gini_index</span>, <span class='va'>hate_crimes_per_100k_splc</span>, <span class='va'>avg_hatecrimes_per_100k_fbi</span>, <span class='va'>median_household_income</span><span class='op'>)</span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>hate_crimes</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"State"</span>, <span class='st'>"Gini Index"</span>, <span class='st'>"Hate Crimes per Capita (SPLC Data)"</span>, <span class='st'>"Hate Crimes per Capita (FBI Data)"</span>, <span class='st'>"Median Household Income"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>hate_crimes</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"State"</span>, <span class='st'>"Gini Index"</span>, <span class='st'>"Hate Crimes per Capita (SPLC Data)"</span>, <span class='st'>"Hate Crimes per Capita (FBI Data)"</span>, <span class='st'>"Median Household Income"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
 </div>
 <table>
 <colgroup>
@@ -1486,78 +1488,78 @@
 <tr class="odd">
 <td style="text-align: left;">Alabama</td>
 <td style="text-align: right;">0.472</td>
-<td style="text-align: right;">0.1258389</td>
-<td style="text-align: right;">1.8064105</td>
+<td style="text-align: right;">0.126</td>
+<td style="text-align: right;">1.806</td>
 <td style="text-align: right;">42278</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Alaska</td>
 <td style="text-align: right;">0.422</td>
-<td style="text-align: right;">0.1437401</td>
-<td style="text-align: right;">1.6567001</td>
+<td style="text-align: right;">0.144</td>
+<td style="text-align: right;">1.657</td>
 <td style="text-align: right;">67629</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Arizona</td>
 <td style="text-align: right;">0.455</td>
-<td style="text-align: right;">0.2253200</td>
-<td style="text-align: right;">3.4139280</td>
+<td style="text-align: right;">0.225</td>
+<td style="text-align: right;">3.414</td>
 <td style="text-align: right;">49254</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Arkansas</td>
 <td style="text-align: right;">0.458</td>
-<td style="text-align: right;">0.0690608</td>
-<td style="text-align: right;">0.8692089</td>
+<td style="text-align: right;">0.069</td>
+<td style="text-align: right;">0.869</td>
 <td style="text-align: right;">44922</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">California</td>
 <td style="text-align: right;">0.471</td>
-<td style="text-align: right;">0.2558054</td>
-<td style="text-align: right;">2.3979859</td>
+<td style="text-align: right;">0.256</td>
+<td style="text-align: right;">2.398</td>
 <td style="text-align: right;">60487</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Colorado</td>
 <td style="text-align: right;">0.457</td>
-<td style="text-align: right;">0.3905233</td>
-<td style="text-align: right;">2.8046888</td>
+<td style="text-align: right;">0.391</td>
+<td style="text-align: right;">2.805</td>
 <td style="text-align: right;">60940</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Connecticut</td>
 <td style="text-align: right;">0.486</td>
-<td style="text-align: right;">0.3353923</td>
-<td style="text-align: right;">3.7727015</td>
+<td style="text-align: right;">0.335</td>
+<td style="text-align: right;">3.773</td>
 <td style="text-align: right;">70161</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Delaware</td>
 <td style="text-align: right;">0.440</td>
-<td style="text-align: right;">0.3227542</td>
-<td style="text-align: right;">1.4699796</td>
+<td style="text-align: right;">0.323</td>
+<td style="text-align: right;">1.470</td>
 <td style="text-align: right;">57522</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">District of Columbia</td>
 <td style="text-align: right;">0.532</td>
-<td style="text-align: right;">1.5223017</td>
-<td style="text-align: right;">10.9534797</td>
+<td style="text-align: right;">1.522</td>
+<td style="text-align: right;">10.953</td>
 <td style="text-align: right;">68277</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Florida</td>
 <td style="text-align: right;">0.474</td>
-<td style="text-align: right;">0.1875212</td>
-<td style="text-align: right;">0.6980703</td>
+<td style="text-align: right;">0.188</td>
+<td style="text-align: right;">0.698</td>
 <td style="text-align: right;">46140</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Georgia</td>
 <td style="text-align: right;">0.468</td>
-<td style="text-align: right;">0.1204203</td>
-<td style="text-align: right;">0.4120118</td>
+<td style="text-align: right;">0.120</td>
+<td style="text-align: right;">0.412</td>
 <td style="text-align: right;">49555</td>
 </tr>
 <tr class="even">
@@ -1570,274 +1572,274 @@
 <tr class="odd">
 <td style="text-align: left;">Idaho</td>
 <td style="text-align: right;">0.433</td>
-<td style="text-align: right;">0.1242082</td>
-<td style="text-align: right;">1.8913305</td>
+<td style="text-align: right;">0.124</td>
+<td style="text-align: right;">1.891</td>
 <td style="text-align: right;">53438</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Illinois</td>
 <td style="text-align: right;">0.465</td>
-<td style="text-align: right;">0.1953445</td>
-<td style="text-align: right;">1.0440158</td>
+<td style="text-align: right;">0.195</td>
+<td style="text-align: right;">1.044</td>
 <td style="text-align: right;">54916</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Indiana</td>
 <td style="text-align: right;">0.440</td>
-<td style="text-align: right;">0.2470089</td>
-<td style="text-align: right;">1.7573566</td>
+<td style="text-align: right;">0.247</td>
+<td style="text-align: right;">1.757</td>
 <td style="text-align: right;">48060</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Iowa</td>
 <td style="text-align: right;">0.427</td>
-<td style="text-align: right;">0.4544274</td>
-<td style="text-align: right;">0.5613956</td>
+<td style="text-align: right;">0.454</td>
+<td style="text-align: right;">0.561</td>
 <td style="text-align: right;">57810</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Kansas</td>
 <td style="text-align: right;">0.445</td>
-<td style="text-align: right;">0.1051525</td>
-<td style="text-align: right;">2.1439867</td>
+<td style="text-align: right;">0.105</td>
+<td style="text-align: right;">2.144</td>
 <td style="text-align: right;">53444</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Kentucky</td>
 <td style="text-align: right;">0.466</td>
-<td style="text-align: right;">0.3243970</td>
-<td style="text-align: right;">4.2078896</td>
+<td style="text-align: right;">0.324</td>
+<td style="text-align: right;">4.208</td>
 <td style="text-align: right;">42786</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Louisiana</td>
 <td style="text-align: right;">0.475</td>
-<td style="text-align: right;">0.1097333</td>
-<td style="text-align: right;">1.3411696</td>
+<td style="text-align: right;">0.110</td>
+<td style="text-align: right;">1.341</td>
 <td style="text-align: right;">42406</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Maine</td>
 <td style="text-align: right;">0.437</td>
-<td style="text-align: right;">0.6155740</td>
-<td style="text-align: right;">2.6266109</td>
+<td style="text-align: right;">0.616</td>
+<td style="text-align: right;">2.627</td>
 <td style="text-align: right;">51710</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Maryland</td>
 <td style="text-align: right;">0.443</td>
-<td style="text-align: right;">0.3704390</td>
-<td style="text-align: right;">1.3248395</td>
+<td style="text-align: right;">0.370</td>
+<td style="text-align: right;">1.325</td>
 <td style="text-align: right;">76165</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Massachusetts</td>
 <td style="text-align: right;">0.475</td>
-<td style="text-align: right;">0.6308106</td>
-<td style="text-align: right;">4.8018993</td>
+<td style="text-align: right;">0.631</td>
+<td style="text-align: right;">4.802</td>
 <td style="text-align: right;">63151</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Michigan</td>
 <td style="text-align: right;">0.451</td>
-<td style="text-align: right;">0.4037794</td>
-<td style="text-align: right;">3.2004423</td>
+<td style="text-align: right;">0.404</td>
+<td style="text-align: right;">3.200</td>
 <td style="text-align: right;">52005</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Minnesota</td>
 <td style="text-align: right;">0.440</td>
-<td style="text-align: right;">0.6274799</td>
-<td style="text-align: right;">3.6124118</td>
+<td style="text-align: right;">0.627</td>
+<td style="text-align: right;">3.612</td>
 <td style="text-align: right;">67244</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Mississippi</td>
 <td style="text-align: right;">0.468</td>
-<td style="text-align: right;">0.0674468</td>
-<td style="text-align: right;">0.6227460</td>
+<td style="text-align: right;">0.067</td>
+<td style="text-align: right;">0.623</td>
 <td style="text-align: right;">35521</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Missouri</td>
 <td style="text-align: right;">0.455</td>
-<td style="text-align: right;">0.1845235</td>
-<td style="text-align: right;">1.9089550</td>
+<td style="text-align: right;">0.185</td>
+<td style="text-align: right;">1.909</td>
 <td style="text-align: right;">56630</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Montana</td>
 <td style="text-align: right;">0.435</td>
-<td style="text-align: right;">0.4954910</td>
-<td style="text-align: right;">2.9549594</td>
+<td style="text-align: right;">0.495</td>
+<td style="text-align: right;">2.955</td>
 <td style="text-align: right;">51102</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Nebraska</td>
 <td style="text-align: right;">0.432</td>
-<td style="text-align: right;">0.1594896</td>
-<td style="text-align: right;">2.6862484</td>
+<td style="text-align: right;">0.159</td>
+<td style="text-align: right;">2.686</td>
 <td style="text-align: right;">56870</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Nevada</td>
 <td style="text-align: right;">0.448</td>
-<td style="text-align: right;">0.1416732</td>
-<td style="text-align: right;">2.1139902</td>
+<td style="text-align: right;">0.142</td>
+<td style="text-align: right;">2.114</td>
 <td style="text-align: right;">49875</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">New Hampshire</td>
 <td style="text-align: right;">0.425</td>
-<td style="text-align: right;">0.1515496</td>
-<td style="text-align: right;">2.1059886</td>
+<td style="text-align: right;">0.152</td>
+<td style="text-align: right;">2.106</td>
 <td style="text-align: right;">73397</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">New Jersey</td>
 <td style="text-align: right;">0.464</td>
-<td style="text-align: right;">0.0783059</td>
-<td style="text-align: right;">4.4132026</td>
+<td style="text-align: right;">0.078</td>
+<td style="text-align: right;">4.413</td>
 <td style="text-align: right;">65243</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">New Mexico</td>
 <td style="text-align: right;">0.464</td>
-<td style="text-align: right;">0.2948113</td>
-<td style="text-align: right;">1.8864352</td>
+<td style="text-align: right;">0.295</td>
+<td style="text-align: right;">1.886</td>
 <td style="text-align: right;">46686</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">New York</td>
 <td style="text-align: right;">0.499</td>
-<td style="text-align: right;">0.3506204</td>
-<td style="text-align: right;">3.1021643</td>
+<td style="text-align: right;">0.351</td>
+<td style="text-align: right;">3.102</td>
 <td style="text-align: right;">54310</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">North Carolina</td>
 <td style="text-align: right;">0.464</td>
-<td style="text-align: right;">0.2440066</td>
-<td style="text-align: right;">1.2626798</td>
+<td style="text-align: right;">0.244</td>
+<td style="text-align: right;">1.263</td>
 <td style="text-align: right;">46784</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">North Dakota</td>
 <td style="text-align: right;">0.433</td>
 <td style="text-align: right;">NA</td>
-<td style="text-align: right;">4.7410699</td>
+<td style="text-align: right;">4.741</td>
 <td style="text-align: right;">60730</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ohio</td>
 <td style="text-align: right;">0.452</td>
-<td style="text-align: right;">0.1907140</td>
-<td style="text-align: right;">3.2404204</td>
+<td style="text-align: right;">0.191</td>
+<td style="text-align: right;">3.240</td>
 <td style="text-align: right;">49644</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Oklahoma</td>
 <td style="text-align: right;">0.454</td>
-<td style="text-align: right;">0.1336291</td>
-<td style="text-align: right;">1.0816721</td>
+<td style="text-align: right;">0.134</td>
+<td style="text-align: right;">1.082</td>
 <td style="text-align: right;">47199</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Oregon</td>
 <td style="text-align: right;">0.449</td>
-<td style="text-align: right;">0.8328496</td>
-<td style="text-align: right;">3.3948861</td>
+<td style="text-align: right;">0.833</td>
+<td style="text-align: right;">3.395</td>
 <td style="text-align: right;">58875</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Pennsylvania</td>
 <td style="text-align: right;">0.461</td>
-<td style="text-align: right;">0.2851011</td>
-<td style="text-align: right;">0.4309276</td>
+<td style="text-align: right;">0.285</td>
+<td style="text-align: right;">0.431</td>
 <td style="text-align: right;">55173</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Rhode Island</td>
 <td style="text-align: right;">0.467</td>
-<td style="text-align: right;">0.0954016</td>
-<td style="text-align: right;">1.2825718</td>
+<td style="text-align: right;">0.095</td>
+<td style="text-align: right;">1.283</td>
 <td style="text-align: right;">58633</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">South Carolina</td>
 <td style="text-align: right;">0.461</td>
-<td style="text-align: right;">0.2098944</td>
-<td style="text-align: right;">1.9370828</td>
+<td style="text-align: right;">0.210</td>
+<td style="text-align: right;">1.937</td>
 <td style="text-align: right;">44929</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">South Dakota</td>
 <td style="text-align: right;">0.442</td>
 <td style="text-align: right;">NA</td>
-<td style="text-align: right;">3.3017371</td>
+<td style="text-align: right;">3.302</td>
 <td style="text-align: right;">53053</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Tennessee</td>
 <td style="text-align: right;">0.468</td>
-<td style="text-align: right;">0.1999385</td>
-<td style="text-align: right;">3.1360512</td>
+<td style="text-align: right;">0.200</td>
+<td style="text-align: right;">3.136</td>
 <td style="text-align: right;">43716</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Texas</td>
 <td style="text-align: right;">0.469</td>
-<td style="text-align: right;">0.2135839</td>
-<td style="text-align: right;">0.7527683</td>
+<td style="text-align: right;">0.214</td>
+<td style="text-align: right;">0.753</td>
 <td style="text-align: right;">53875</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Utah</td>
 <td style="text-align: right;">0.419</td>
-<td style="text-align: right;">0.1365467</td>
-<td style="text-align: right;">2.3840650</td>
+<td style="text-align: right;">0.137</td>
+<td style="text-align: right;">2.384</td>
 <td style="text-align: right;">63383</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Vermont</td>
 <td style="text-align: right;">0.444</td>
-<td style="text-align: right;">0.3241491</td>
-<td style="text-align: right;">1.9030814</td>
+<td style="text-align: right;">0.324</td>
+<td style="text-align: right;">1.903</td>
 <td style="text-align: right;">60708</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Virginia</td>
 <td style="text-align: right;">0.459</td>
-<td style="text-align: right;">0.3632489</td>
-<td style="text-align: right;">1.7247546</td>
+<td style="text-align: right;">0.363</td>
+<td style="text-align: right;">1.725</td>
 <td style="text-align: right;">66155</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Washington</td>
 <td style="text-align: right;">0.441</td>
-<td style="text-align: right;">0.6774876</td>
-<td style="text-align: right;">3.8177403</td>
+<td style="text-align: right;">0.677</td>
+<td style="text-align: right;">3.818</td>
 <td style="text-align: right;">59068</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">West Virginia</td>
 <td style="text-align: right;">0.451</td>
-<td style="text-align: right;">0.3286771</td>
-<td style="text-align: right;">2.0370536</td>
+<td style="text-align: right;">0.329</td>
+<td style="text-align: right;">2.037</td>
 <td style="text-align: right;">39552</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Wisconsin</td>
 <td style="text-align: right;">0.430</td>
-<td style="text-align: right;">0.2261971</td>
-<td style="text-align: right;">1.1219447</td>
+<td style="text-align: right;">0.226</td>
+<td style="text-align: right;">1.122</td>
 <td style="text-align: right;">58080</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Wyoming</td>
 <td style="text-align: right;">0.423</td>
 <td style="text-align: right;">NA</td>
-<td style="text-align: right;">0.2669408</td>
+<td style="text-align: right;">0.267</td>
 <td style="text-align: right;">55690</td>
 </tr>
 </tbody>
@@ -1848,7 +1850,7 @@
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>dep_var_table</span> <span class='op'>&lt;-</span> <span class='va'>hate_crimes</span> <span class='op'>|&gt;</span> </span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>state</span>, <span class='va'>avg_hatecrimes_per_100k_fbi</span>, <span class='va'>hate_crimes_per_100k_splc</span><span class='op'>)</span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>dep_var_table</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"State"</span>, <span class='st'>"Hate Crimes per Capita (FBI Data)"</span>, <span class='st'>"Hate Crimes per Capita (SPLC Data)"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>dep_var_table</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"State"</span>, <span class='st'>"Hate Crimes per Capita (FBI Data)"</span>, <span class='st'>"Hate Crimes per Capita (SPLC Data)"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
 </div>
 <table>
 <colgroup>
@@ -1866,58 +1868,58 @@
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Alabama</td>
-<td style="text-align: right;">1.8064105</td>
-<td style="text-align: right;">0.1258389</td>
+<td style="text-align: right;">1.806</td>
+<td style="text-align: right;">0.126</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Alaska</td>
-<td style="text-align: right;">1.6567001</td>
-<td style="text-align: right;">0.1437401</td>
+<td style="text-align: right;">1.657</td>
+<td style="text-align: right;">0.144</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Arizona</td>
-<td style="text-align: right;">3.4139280</td>
-<td style="text-align: right;">0.2253200</td>
+<td style="text-align: right;">3.414</td>
+<td style="text-align: right;">0.225</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Arkansas</td>
-<td style="text-align: right;">0.8692089</td>
-<td style="text-align: right;">0.0690608</td>
+<td style="text-align: right;">0.869</td>
+<td style="text-align: right;">0.069</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">California</td>
-<td style="text-align: right;">2.3979859</td>
-<td style="text-align: right;">0.2558054</td>
+<td style="text-align: right;">2.398</td>
+<td style="text-align: right;">0.256</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Colorado</td>
-<td style="text-align: right;">2.8046888</td>
-<td style="text-align: right;">0.3905233</td>
+<td style="text-align: right;">2.805</td>
+<td style="text-align: right;">0.391</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Connecticut</td>
-<td style="text-align: right;">3.7727015</td>
-<td style="text-align: right;">0.3353923</td>
+<td style="text-align: right;">3.773</td>
+<td style="text-align: right;">0.335</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Delaware</td>
-<td style="text-align: right;">1.4699796</td>
-<td style="text-align: right;">0.3227542</td>
+<td style="text-align: right;">1.470</td>
+<td style="text-align: right;">0.323</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">District of Columbia</td>
-<td style="text-align: right;">10.9534797</td>
-<td style="text-align: right;">1.5223017</td>
+<td style="text-align: right;">10.953</td>
+<td style="text-align: right;">1.522</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Florida</td>
-<td style="text-align: right;">0.6980703</td>
-<td style="text-align: right;">0.1875212</td>
+<td style="text-align: right;">0.698</td>
+<td style="text-align: right;">0.188</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Georgia</td>
-<td style="text-align: right;">0.4120118</td>
-<td style="text-align: right;">0.1204203</td>
+<td style="text-align: right;">0.412</td>
+<td style="text-align: right;">0.120</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Hawaii</td>
@@ -1926,197 +1928,197 @@
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Idaho</td>
-<td style="text-align: right;">1.8913305</td>
-<td style="text-align: right;">0.1242082</td>
+<td style="text-align: right;">1.891</td>
+<td style="text-align: right;">0.124</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Illinois</td>
-<td style="text-align: right;">1.0440158</td>
-<td style="text-align: right;">0.1953445</td>
+<td style="text-align: right;">1.044</td>
+<td style="text-align: right;">0.195</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Indiana</td>
-<td style="text-align: right;">1.7573566</td>
-<td style="text-align: right;">0.2470089</td>
+<td style="text-align: right;">1.757</td>
+<td style="text-align: right;">0.247</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Iowa</td>
-<td style="text-align: right;">0.5613956</td>
-<td style="text-align: right;">0.4544274</td>
+<td style="text-align: right;">0.561</td>
+<td style="text-align: right;">0.454</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Kansas</td>
-<td style="text-align: right;">2.1439867</td>
-<td style="text-align: right;">0.1051525</td>
+<td style="text-align: right;">2.144</td>
+<td style="text-align: right;">0.105</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Kentucky</td>
-<td style="text-align: right;">4.2078896</td>
-<td style="text-align: right;">0.3243970</td>
+<td style="text-align: right;">4.208</td>
+<td style="text-align: right;">0.324</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Louisiana</td>
-<td style="text-align: right;">1.3411696</td>
-<td style="text-align: right;">0.1097333</td>
+<td style="text-align: right;">1.341</td>
+<td style="text-align: right;">0.110</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Maine</td>
-<td style="text-align: right;">2.6266109</td>
-<td style="text-align: right;">0.6155740</td>
+<td style="text-align: right;">2.627</td>
+<td style="text-align: right;">0.616</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Maryland</td>
-<td style="text-align: right;">1.3248395</td>
-<td style="text-align: right;">0.3704390</td>
+<td style="text-align: right;">1.325</td>
+<td style="text-align: right;">0.370</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Massachusetts</td>
-<td style="text-align: right;">4.8018993</td>
-<td style="text-align: right;">0.6308106</td>
+<td style="text-align: right;">4.802</td>
+<td style="text-align: right;">0.631</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Michigan</td>
-<td style="text-align: right;">3.2004423</td>
-<td style="text-align: right;">0.4037794</td>
+<td style="text-align: right;">3.200</td>
+<td style="text-align: right;">0.404</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Minnesota</td>
-<td style="text-align: right;">3.6124118</td>
-<td style="text-align: right;">0.6274799</td>
+<td style="text-align: right;">3.612</td>
+<td style="text-align: right;">0.627</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Mississippi</td>
-<td style="text-align: right;">0.6227460</td>
-<td style="text-align: right;">0.0674468</td>
+<td style="text-align: right;">0.623</td>
+<td style="text-align: right;">0.067</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Missouri</td>
-<td style="text-align: right;">1.9089550</td>
-<td style="text-align: right;">0.1845235</td>
+<td style="text-align: right;">1.909</td>
+<td style="text-align: right;">0.185</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Montana</td>
-<td style="text-align: right;">2.9549594</td>
-<td style="text-align: right;">0.4954910</td>
+<td style="text-align: right;">2.955</td>
+<td style="text-align: right;">0.495</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Nebraska</td>
-<td style="text-align: right;">2.6862484</td>
-<td style="text-align: right;">0.1594896</td>
+<td style="text-align: right;">2.686</td>
+<td style="text-align: right;">0.159</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Nevada</td>
-<td style="text-align: right;">2.1139902</td>
-<td style="text-align: right;">0.1416732</td>
+<td style="text-align: right;">2.114</td>
+<td style="text-align: right;">0.142</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">New Hampshire</td>
-<td style="text-align: right;">2.1059886</td>
-<td style="text-align: right;">0.1515496</td>
+<td style="text-align: right;">2.106</td>
+<td style="text-align: right;">0.152</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">New Jersey</td>
-<td style="text-align: right;">4.4132026</td>
-<td style="text-align: right;">0.0783059</td>
+<td style="text-align: right;">4.413</td>
+<td style="text-align: right;">0.078</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">New Mexico</td>
-<td style="text-align: right;">1.8864352</td>
-<td style="text-align: right;">0.2948113</td>
+<td style="text-align: right;">1.886</td>
+<td style="text-align: right;">0.295</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">New York</td>
-<td style="text-align: right;">3.1021643</td>
-<td style="text-align: right;">0.3506204</td>
+<td style="text-align: right;">3.102</td>
+<td style="text-align: right;">0.351</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">North Carolina</td>
-<td style="text-align: right;">1.2626798</td>
-<td style="text-align: right;">0.2440066</td>
+<td style="text-align: right;">1.263</td>
+<td style="text-align: right;">0.244</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">North Dakota</td>
-<td style="text-align: right;">4.7410699</td>
+<td style="text-align: right;">4.741</td>
 <td style="text-align: right;">NA</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ohio</td>
-<td style="text-align: right;">3.2404204</td>
-<td style="text-align: right;">0.1907140</td>
+<td style="text-align: right;">3.240</td>
+<td style="text-align: right;">0.191</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Oklahoma</td>
-<td style="text-align: right;">1.0816721</td>
-<td style="text-align: right;">0.1336291</td>
+<td style="text-align: right;">1.082</td>
+<td style="text-align: right;">0.134</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Oregon</td>
-<td style="text-align: right;">3.3948861</td>
-<td style="text-align: right;">0.8328496</td>
+<td style="text-align: right;">3.395</td>
+<td style="text-align: right;">0.833</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Pennsylvania</td>
-<td style="text-align: right;">0.4309276</td>
-<td style="text-align: right;">0.2851011</td>
+<td style="text-align: right;">0.431</td>
+<td style="text-align: right;">0.285</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Rhode Island</td>
-<td style="text-align: right;">1.2825718</td>
-<td style="text-align: right;">0.0954016</td>
+<td style="text-align: right;">1.283</td>
+<td style="text-align: right;">0.095</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">South Carolina</td>
-<td style="text-align: right;">1.9370828</td>
-<td style="text-align: right;">0.2098944</td>
+<td style="text-align: right;">1.937</td>
+<td style="text-align: right;">0.210</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">South Dakota</td>
-<td style="text-align: right;">3.3017371</td>
+<td style="text-align: right;">3.302</td>
 <td style="text-align: right;">NA</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Tennessee</td>
-<td style="text-align: right;">3.1360512</td>
-<td style="text-align: right;">0.1999385</td>
+<td style="text-align: right;">3.136</td>
+<td style="text-align: right;">0.200</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Texas</td>
-<td style="text-align: right;">0.7527683</td>
-<td style="text-align: right;">0.2135839</td>
+<td style="text-align: right;">0.753</td>
+<td style="text-align: right;">0.214</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Utah</td>
-<td style="text-align: right;">2.3840650</td>
-<td style="text-align: right;">0.1365467</td>
+<td style="text-align: right;">2.384</td>
+<td style="text-align: right;">0.137</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Vermont</td>
-<td style="text-align: right;">1.9030814</td>
-<td style="text-align: right;">0.3241491</td>
+<td style="text-align: right;">1.903</td>
+<td style="text-align: right;">0.324</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">1.7247546</td>
-<td style="text-align: right;">0.3632489</td>
+<td style="text-align: right;">1.725</td>
+<td style="text-align: right;">0.363</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Washington</td>
-<td style="text-align: right;">3.8177403</td>
-<td style="text-align: right;">0.6774876</td>
+<td style="text-align: right;">3.818</td>
+<td style="text-align: right;">0.677</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">West Virginia</td>
-<td style="text-align: right;">2.0370536</td>
-<td style="text-align: right;">0.3286771</td>
+<td style="text-align: right;">2.037</td>
+<td style="text-align: right;">0.329</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Wisconsin</td>
-<td style="text-align: right;">1.1219447</td>
-<td style="text-align: right;">0.2261971</td>
+<td style="text-align: right;">1.122</td>
+<td style="text-align: right;">0.226</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Wyoming</td>
-<td style="text-align: right;">0.2669408</td>
+<td style="text-align: right;">0.267</td>
 <td style="text-align: right;">NA</td>
 </tr>
 </tbody>
@@ -2189,7 +2191,7 @@
 <span><span class='va'>viz_3</span> <span class='op'>&lt;-</span> <span class='va'>hate_crimes</span> <span class='op'>|&gt;</span> </span>
 <span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/drop_na.html'>drop_na</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cor</a></span><span class='op'>(</span><span class='va'>avg_hatecrimes_per_100k_fbi</span>, <span class='va'>gini_index</span><span class='op'>)</span><span class='op'>)</span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>viz_3</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Correlation Between Gini Index and Hate Crimes Per Capita (FBI Data)"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>viz_3</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Correlation Between Gini Index and Hate Crimes Per Capita (FBI Data)"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
 </div>
 <table>
 <thead>
@@ -2199,7 +2201,7 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">0.4549568</td>
+<td style="text-align: right;">0.455</td>
 </tr>
 </tbody>
 </table>
@@ -2211,7 +2213,7 @@
 <span><span class='va'>viz_4</span> <span class='op'>&lt;-</span> <span class='va'>hate_crimes</span> <span class='op'>|&gt;</span> </span>
 <span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/drop_na.html'>drop_na</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cor</a></span><span class='op'>(</span><span class='va'>hate_crimes_per_100k_splc</span>, <span class='va'>gini_index</span><span class='op'>)</span><span class='op'>)</span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>viz_4</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Correlation Between Gini Index and Hate Crimes Per Capita (SPLC Data)"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>viz_4</span>, col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Correlation Between Gini Index and Hate Crimes Per Capita (SPLC Data)"</span><span class='op'>)</span>, digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
 </div>
 <table>
 <thead>
@@ -2221,7 +2223,7 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">0.3294393</td>
+<td style="text-align: right;">0.329</td>
 </tr>
 </tbody>
 </table>
@@ -2230,15 +2232,107 @@
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>hc_reg_splc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>hate_crimes_per_100k_splc</span> <span class='op'>~</span> <span class='va'>gini_index</span> , data <span class='op'>=</span> <span class='va'>hate_crimes</span><span class='op'>)</span></span>
-<span><span class='va'>hc_reg_splc</span></span></code></pre>
+<span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/modelsummary/man/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>hc_reg_splc</span>, digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>
-Call:
-lm(formula = hate_crimes_per_100k_splc ~ gini_index, data = hate_crimes)
-
-Coefficients:
-(Intercept)   gini_index  
-     -1.527        4.021  </code></pre>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+ (1)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:center;">
+−1.527
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.783)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gini_index
+</td>
+<td style="text-align:center;">
+4.021
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1.5px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1.5px">
+(1.718)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:center;">
+47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2
+</td>
+<td style="text-align:center;">
+0.109
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2 Adj.
+</td>
+<td style="text-align:center;">
+0.089
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AIC
+</td>
+<td style="text-align:center;">
+3.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BIC
+</td>
+<td style="text-align:center;">
+9.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Log.Lik.
+</td>
+<td style="text-align:center;">
+1.164
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RMSE
+</td>
+<td style="text-align:center;">
+0.24
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2252,41 +2346,152 @@ Coefficients:
 <pre><code># A tibble: 1,000 × 2
    replicate hc_mean
        &lt;int&gt;   &lt;dbl&gt;
- 1         1   0.340
- 2         2   0.217
- 3         3   0.342
- 4         4   0.288
- 5         5   0.283
- 6         6   0.302
- 7         7   0.373
- 8         8   0.272
- 9         9   0.288
-10        10   0.306
+ 1         1   0.295
+ 2         2   0.259
+ 3         3   0.297
+ 4         4   0.349
+ 5         5   0.281
+ 6         6   0.303
+ 7         7   0.287
+ 8         8   0.284
+ 9         9   0.326
+10        10   0.257
 # ℹ 990 more rows</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>boot_dist_splc</span> <span class='op'>|&gt;</span> </span>
-<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/get_confidence_interval.html'>get_confidence_interval</a></span><span class='op'>(</span>level <span class='op'>=</span> <span class='fl'>0.95</span>, type <span class='op'>=</span> <span class='st'>"percentile"</span><span class='op'>)</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>CI_splc</span> <span class='op'>&lt;-</span> <span class='va'>boot_dist_splc</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/get_confidence_interval.html'>get_confidence_interval</a></span><span class='op'>(</span>level <span class='op'>=</span> <span class='fl'>0.95</span>, type <span class='op'>=</span> <span class='st'>"percentile"</span><span class='op'>)</span></span>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>CI_splc</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code># A tibble: 1 × 2
-  lower_ci upper_ci
-     &lt;dbl&gt;    &lt;dbl&gt;
-1    0.241    0.385</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+lower_ci
+</th>
+<th style="text-align:right;">
+upper_ci
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0.2394151
+</td>
+<td style="text-align:right;">
+0.3792923
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h1 id="regression-and-ci-for-fbi-data">Regression and CI for FBI Data</h1>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>hc_reg_fbi</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>avg_hatecrimes_per_100k_fbi</span> <span class='op'>~</span> <span class='va'>gini_index</span> , data <span class='op'>=</span> <span class='va'>hate_crimes</span><span class='op'>)</span></span>
-<span><span class='va'>hc_reg_fbi</span></span></code></pre>
+<span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/modelsummary/man/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>hc_reg_fbi</span>, digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>
-Call:
-lm(formula = avg_hatecrimes_per_100k_fbi ~ gini_index, data = hate_crimes)
-
-Coefficients:
-(Intercept)   gini_index  
-     -13.33        34.57  </code></pre>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+ (1)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:center;">
+−13.334
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(4.884)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gini_index
+</td>
+<td style="text-align:center;">
+34.571
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1.5px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1.5px">
+(10.743)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:center;">
+50
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2
+</td>
+<td style="text-align:center;">
+0.177
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2 Adj.
+</td>
+<td style="text-align:center;">
+0.160
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AIC
+</td>
+<td style="text-align:center;">
+191.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BIC
+</td>
+<td style="text-align:center;">
+196.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Log.Lik.
+</td>
+<td style="text-align:center;">
+−92.506
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RMSE
+</td>
+<td style="text-align:center;">
+1.54
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2294,32 +2499,51 @@ Coefficients:
 <span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/rep_sample_n.html'>rep_slice_sample</a></span><span class='op'>(</span>prop <span class='op'>=</span> <span class='fl'>1</span>, reps <span class='op'>=</span> <span class='fl'>1000</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>replicate</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>hc_mean <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>avg_hatecrimes_per_100k_fbi</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span></span>
-<span><span class='va'>boot_dist_splc</span></span></code></pre>
+<span><span class='va'>boot_dist_fbi</span></span></code></pre>
 </div>
 <pre><code># A tibble: 1,000 × 2
    replicate hc_mean
        &lt;int&gt;   &lt;dbl&gt;
- 1         1   0.340
- 2         2   0.217
- 3         3   0.342
- 4         4   0.288
- 5         5   0.283
- 6         6   0.302
- 7         7   0.373
- 8         8   0.272
- 9         9   0.288
-10        10   0.306
+ 1         1    2.55
+ 2         2    2.19
+ 3         3    2.60
+ 4         4    2.31
+ 5         5    2.67
+ 6         6    2.27
+ 7         7    2.55
+ 8         8    2.32
+ 9         9    2.40
+10        10    2.46
 # ℹ 990 more rows</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>boot_dist_fbi</span> <span class='op'>|&gt;</span> </span>
-<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/get_confidence_interval.html'>get_confidence_interval</a></span><span class='op'>(</span>level <span class='op'>=</span> <span class='fl'>0.95</span>, type <span class='op'>=</span> <span class='st'>"percentile"</span><span class='op'>)</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>CI_fbi</span> <span class='op'>&lt;-</span> <span class='va'>boot_dist_fbi</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://infer.tidymodels.org/reference/get_confidence_interval.html'>get_confidence_interval</a></span><span class='op'>(</span>level <span class='op'>=</span> <span class='fl'>0.95</span>, type <span class='op'>=</span> <span class='st'>"percentile"</span><span class='op'>)</span></span>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>CI_fbi</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code># A tibble: 1 × 2
-  lower_ci upper_ci
-     &lt;dbl&gt;    &lt;dbl&gt;
-1     1.92     2.88</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+lower_ci
+</th>
+<th style="text-align:right;">
+upper_ci
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1.945861
+</td>
+<td style="text-align:right;">
+2.880593
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p>As displayed in all six of the visualizations above, there is a positive correlation between income inequality (measured using the gini index) and hate crimes per capita in both the FBI and SPLC measurements. This means that there is a higher instance of hate crimes in states with greater income inequality (as measured by the gini index). This positive correlation is likely due to the fact that in places with greater income inequality, people are more likely to have to compete for scarce resources, which can excerbate already existing divisions between various groups. The correlation between income inequality and per-capita hate crimes is slightly more positive when examining the FBI data. The stronger positive correlation between hate crimes and income inequality is likely due to the fact that the FBI data includes measurements from states like North Dakota and South Dakota, both of which have hate crime rates that are above the average of 2.37 hate crimes per capita.</p>
 <p>The coefficient in the linear regression for the SPLC data displays that for a 1 unit increase in the gini index, hate crimes per capita would increase by a measure of 4.021. The intercept of this regression shows that if the gini index was zero (representing perfect equality), the average number of hate crimes per capita would be -1.527. Of course, you can not have a negative number of hate crimes. The negativity of this number is due to the fact that there are no states in the dataset with perfect equality. The coefficient in the linear regression for the FBI data displays that for a 1 unit increase in the gini index, hate crimes per capita would increase by a measure of 34.57. The intercept of this regression shows that if the gini index was zero (representing perfect equality), the average number of hate crimes per capita would be -13.33. The analysis of negative intercepts outlined above is true for this regression model as well.</p>
