@@ -2346,16 +2346,16 @@ RMSE
 <pre><code># A tibble: 1,000 × 2
    replicate hc_mean
        &lt;int&gt;   &lt;dbl&gt;
- 1         1   0.295
- 2         2   0.259
- 3         3   0.297
- 4         4   0.349
- 5         5   0.281
- 6         6   0.303
- 7         7   0.287
- 8         8   0.284
- 9         9   0.326
-10        10   0.257
+ 1         1   0.341
+ 2         2   0.308
+ 3         3   0.310
+ 4         4   0.289
+ 5         5   0.283
+ 6         6   0.323
+ 7         7   0.328
+ 8         8   0.265
+ 9         9   0.297
+10        10   0.272
 # ℹ 990 more rows</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
@@ -2378,10 +2378,10 @@ upper_ci
 <tbody>
 <tr>
 <td style="text-align:right;">
-0.2394151
+0.2413344
 </td>
 <td style="text-align:right;">
-0.3792923
+0.3741528
 </td>
 </tr>
 </tbody>
@@ -2504,16 +2504,16 @@ RMSE
 <pre><code># A tibble: 1,000 × 2
    replicate hc_mean
        &lt;int&gt;   &lt;dbl&gt;
- 1         1    2.55
- 2         2    2.19
- 3         3    2.60
- 4         4    2.31
- 5         5    2.67
- 6         6    2.27
- 7         7    2.55
- 8         8    2.32
- 9         9    2.40
-10        10    2.46
+ 1         1    2.38
+ 2         2    2.04
+ 3         3    2.42
+ 4         4    2.36
+ 5         5    2.25
+ 6         6    2.25
+ 7         7    2.59
+ 8         8    2.55
+ 9         9    2.12
+10        10    2.14
 # ℹ 990 more rows</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
@@ -2536,16 +2536,16 @@ upper_ci
 <tbody>
 <tr>
 <td style="text-align:right;">
-1.945861
+1.901519
 </td>
 <td style="text-align:right;">
-2.880593
+2.900035
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>As displayed in all six of the visualizations above, there is a positive correlation between income inequality (measured using the gini index) and hate crimes per capita in both the FBI and SPLC measurements. This means that there is a higher instance of hate crimes in states with greater income inequality (as measured by the gini index). This positive correlation is likely due to the fact that in places with greater income inequality, people are more likely to have to compete for scarce resources, which can excerbate already existing divisions between various groups. The correlation between income inequality and per-capita hate crimes is slightly more positive when examining the FBI data. The stronger positive correlation between hate crimes and income inequality is likely due to the fact that the FBI data includes measurements from states like North Dakota and South Dakota, both of which have hate crime rates that are above the average of 2.37 hate crimes per capita.</p>
+<p>As displayed in the visualizations above, there is a positive correlation between income inequality (measured using the gini index) and hate crimes per capita in both the FBI and SPLC measurements. This means that there is a higher instance of hate crimes in states with greater income inequality (as measured by the gini index). This positive correlation is likely due to the fact that in places with greater income inequality, people are more likely to have to compete for scarce resources, which can exacerbate already existing divisions between various groups. The correlation between income inequality and per-capita hate crimes is slightly more positive when examining the FBI data. The stronger positive correlation between hate crimes and income inequality is likely due to the fact that the FBI data includes measurements from states like North Dakota and South Dakota, both of which have hate crime rates that are above the average of 2.37 hate crimes per capita.</p>
 <p>The coefficient in the linear regression for the SPLC data displays that for a 1 unit increase in the gini index, hate crimes per capita would increase by a measure of 4.021. The intercept of this regression shows that if the gini index was zero (representing perfect equality), the average number of hate crimes per capita would be -1.527. Of course, you can not have a negative number of hate crimes. The negativity of this number is due to the fact that there are no states in the dataset with perfect equality. The coefficient in the linear regression for the FBI data displays that for a 1 unit increase in the gini index, hate crimes per capita would increase by a measure of 34.57. The intercept of this regression shows that if the gini index was zero (representing perfect equality), the average number of hate crimes per capita would be -13.33. The analysis of negative intercepts outlined above is true for this regression model as well.</p>
 <p>In both the SPLC and FBI data, we reject the null hypothesis. The above models demonstrate statistical significance, indicating that the observed relationship is not due to chance. However, confounding variables may have an influence on apparent causality. Though there is likely a causal relationship present, caution in interpretation is necessary to ensure accuracy. The concept of confounders is discussed in more detail in the conclusion.</p>
 <h2 id="conclusion">Conclusion</h2>
